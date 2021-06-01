@@ -1,0 +1,105 @@
+
+body{font-family: 'Karla', sans-serif;
+}
+.container{
+    border:rgb(63, 60, 77) solid 40px;
+    margin:0 auto;
+    height:100%;
+    display: flex;
+    width:70%
+    
+}
+.left-part{
+    height:100%;
+    width:30%;
+    background-color: rgba(170, 228, 245, 0.815);
+    
+
+}
+.right-part{
+    background-color: white;
+    width:60%;
+    height:100%;
+    
+}
+.right-part p{
+    text-align: justify;
+    line-height: 50px!important;
+}
+.right-part ol li{
+    margin-left:40px ;
+    line-height: 50px;
+}
+img{
+    width:100%;
+    height: auto;
+}
+h1{
+margin: 30px;
+font-size: 65px;
+}
+h3{
+    margin: 40px;
+    font-size: 35px;
+    color:black;
+}
+h2{
+    font-size: 45px;
+    margin-left: 10px;
+    color: darkblue;
+}
+p{
+    font-size: 30px;
+    margin-left: 50px;
+}
+ul {
+    list-style-type: none;
+    line-height: 40px;
+}
+li{
+    font-size: 30px;
+    margin-left: 20px;
+}
+li>span{
+    margin-left: 15px;
+    font-size:27px;
+}
+h1>span{
+    color:rgb(255, 153, 0);
+}
+
+.info{
+    border-bottom: 1px solid rgb(63, 60, 77);
+}
+.languages{
+    border-bottom: 1px solid rgb(63, 60, 77);
+}
+.hobby{
+    border-bottom: 1px solid rgb(63, 60, 77);
+}
+.hobbyP{
+    font-weight: bold;
+    font-size: 27px;
+    margin-top: 0px;
+    line-height:50px ;
+}
+.detail{
+    border-bottom: 1px solid rgb(63, 60, 77);
+
+}
+.skills{
+    border-bottom: 1px solid rgb(63, 60, 77);
+}
+.education{
+    border-bottom: 1px solid rgb(63, 60, 77);
+}
+.experience{
+    border-bottom: 1px solid rgb(63, 60, 77);
+}
+.certifications{
+    border-bottom: 1px solid rgb(63, 60, 77);
+}
+.summary{
+    border-bottom: 1px solid rgb(63, 60, 77);
+
+}
