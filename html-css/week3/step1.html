@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form - step 1</title>
+    <link rel="stylesheet" href="./styles/SignUp.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="logo"></div>
+        <nav>navigation</nav>
+    </header>
+    <main>
+        <section class="top-section">
+            <h1>Sign up to yourcustomtailor.com</h1>
+            <hr>
+            <p>We can't wait to help you improve your life-style and gain the attention from people around you!</p>
+            <p>Sign up below to save up to 70% on apparel, hand-bags and cosmetics. Our agents are busy picking the best
+                offers that match your preferences and style. Every week we will send you a hand-picked selection - we
+                just need to know a few details about your first...</p>
+        </section>
+        <section class="bottom-section">
+            <h2>Step 1/4 - tell us who you are?</h2>
+            <div class="progress-container">
+                <progress value="1" max="4"></progress>
+            </div>
+            <p>Nice to meet you. Let's spend a minute to get to know each other? Please enter the following:</p>
+            
+            <form method="post" action="step2.html" autocomplete="off">
+                <div class="inputs">
+                    <div class="input-group">
+                        <label>First Name*</label>
+                    </div>
+                    <div class="input-group">
+                        <input name='first-name' type='text' class="form-input" required />
+                    </div>
+                    <div class="input-group">
+                        <label >Last Name*</label>
+                    </div>
+                    <div class="input-group">
+                        <input name='last-name' type='text' class="form-input" required />
+                    </div>
+                    <div class="input-group">
+                        <label >Country*</label>
+                    </div>
+                    <div class="input-group">
+                        <select name='country' class="form-input" required>
+                            <option value="0">select your country</option>
+                            <option value="Afghanistan">Afghanistan</option>
+                            <option value="Åland Islands">Åland Islands</option>
+                            <option value="Albania">Albania</option>
+                            <option value="Algeria">Algeria</option>
+                            <option value="American Samoa">American Samoa</option>
+                            <option value="Andorra">Andorra</option>
+                            <option value="Angola">Angola</option>
+                            <option value="Anguilla">Anguilla</option>
+                            <option value="Antarctica">Antarctica</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label >Street Address*</label>
+                    </div>
+                    <div class="input-group">
+                        <input name='street-address' type='text' class="form-input" required/>
+                    </div> 
+                    <div class="input-group">
+                        <label >Post Code*</label>
+                    </div>
+                    <div class="input-group">
+                        <input name='post-code' type='number' min="1000" max="9999" inputmode="tel" class="form-input" required/>
+                    </div>
+                    <div class="clear-area">
+                        <div class="input-group">
+                            <label>Profile description</label>
+                            <p> 70% on apparel, hand-bags and cosmetics. Our agents are busy picking the best offers that match your preferences and style. Every week we will send you a hand-picked selection - we just need to know a few details about yo</p>
+                        </div>
+                        <textarea id="description" name="clear-area" maxlength="500"></textarea>
+                    </div>
+                    
+                    <div class="shipping">
+                        <p> Use the same address for billing and shipping? Uncheck below to fill out a separate shipping address.</p>
+                        <label class="shipping-checkbox" >
+                            shipping address
+                            <input type="checkbox" name="shipping-checkbox"  onchange="changeReq(this.checked);"/>
+                            <span class="checkmark"></span>
+                            <div class="clear-area" id="hidden">
+                                <div class="input-group">
+                                    <label >First Name*</label>
+                                </div>
+                                <div class="input-group">
+                                    <input name='first-name' type='text' class="form-input" id="first-name"/>
+                                </div>
+                                <div class="input-group">
+                                    <label >Last Name*</label>
+                                </div>
+                                <div class="input-group">
+                                    <input name='last-name' type='text' class="form-input" id="last-name"/>
+                                </div>
+                                <div class="input-group">
+                                    <label >Country*</label>
+                                </div>
+                                <div class="input-group">
+                                    <select name='country' class="form-input"  id="country">
+                                        <option value="0">select your country</option>
+                                        <option value="Afghanistan">Afghanistan</option>
+                                        <option value="Åland_Islands">Åland Islands</option>
+                                        <option value="Albania">Albania</option>
+                                        <option value="Algeria">Algeria</option>
+                                        <option value="American_Samoa">American Samoa</option>
+                                        <option value="Andorra">Andorra</option>
+                                        <option value="Angola">Angola</option>
+                                        <option value="Anguilla">Anguilla</option>
+                                        <option value="Antarctica">Antarctica</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <label >Street Address*</label>
+                                </div>
+                                <div class="input-group">
+                                    <input name='street-address' type='text' class="form-input" id="street-address"/>
+                                </div>
+                                <div class="input-group">
+                                    <label >Post Code*</label>
+                                </div>
+                                <div class="input-group">
+                                    <input name='post-code' type='number' max="9999" min="1000" inputmode="tel" class="form-input" id="post-code"/>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="button-division">
+                    <button type="submit">Next Step</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+<script>
+    function changeReq(check){
+        if(check==true){
+            document.getElementById('first-name').required = true;
+            document.getElementById('last-name').required = true;
+            document.getElementById('country').required = true;
+            document.getElementById('street-address').required = true;
+            document.getElementById('post-code').required = true;
+        }else{
+            document.getElementById('first-name').required = false;
+            document.getElementById('last-name').required = false;
+            document.getElementById('country').required = false;
+            document.getElementById('street-address').required = false;
+            document.getElementById('post-code').required = false;
+        }
+    }
+</script>
+</html>

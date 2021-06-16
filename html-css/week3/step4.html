@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form - step 4</title>
+    <link rel="stylesheet" href="./styles/SignUp.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="logo"></div>
+        <nav>navigation</nav>
+    </header>
+    <main>
+        <section>
+            <h1>Sign up to yourcustomtailor.com</h1>
+            <hr>
+        </section>
+        <section>
+            <h2>Step 4/4 - Payement</h2>
+            <div class="progress-container">
+                <progress value="4" max="4"></progress>
+            </div>
+            <p>please fill in your payement data</p>
+            <form method="post" action="step3.html" autocomplete="off">
+                <div class="inputs">
+                    <div class="input-group">
+                        <label>Name on card</label>
+                    </div>
+                    <div class="input-group">
+                        <input name='card_name' type='text' class="form-input" required />
+                    </div>
+                    <div class="input-group"></div>
+                    <div class="input-group"></div>
+                    <div class="input-group">
+                        <label>Card type</label>
+                    </div>
+                    <div class="input-group">
+                        <select name='card_type' class="form-input" required>
+                            <option value="0">select card type</option>
+                            <option value="1">card type 1</option>
+                            <option value="2">card type 2</option>
+                            <option value="3">card type 3</option>
+                            <option value="4">card type 4</option>
+                        </select>
+                    </div>
+                    <div class="input-group"></div>
+                    <div class="input-group"></div>
+                    <div class="input-group">
+                        <label>Credit card number</label>
+                    </div>
+                    <div class="input-group">
+                        <input name='card_number' type='number' inputmode="tel" class="form-input" min="1000000000000000" max="9999999999999999" title="enter 16 digits" required />
+                    </div>
+                    <div class="input-group">
+                        <label>First name</label>
+                    </div>
+                    <div class="input-group">
+                        <input name='first_name' type="text" class="form-input" required />
+                    </div>
+                    <div class="input-group">
+                        <div class="card-detail">
+                            <label>Expiry month</label>
+                            <input name='first_nameExpiry month' type="number" inputmode="tel" class="form-input" required />
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="card-detail">
+                            <label>Expiry year</label>
+                            <input name='first_nameExpiry year' type="number" inputmode="tel" class="form-input" required />
+                        </div>
+                    </div>
+                    <div class="input-group"></div>
+                    <div class="input-group"></div>
+                    <div class="input-group">
+                        <div class="card-detail">
+                            <label>cvv</label>
+                            <input name='first_name' type="number" inputmode="tel" min="100" max="999" title="enter 3 digits" class="form-input" required />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-division">
+                    <button type="submit">Finish</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>

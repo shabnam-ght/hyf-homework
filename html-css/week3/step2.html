@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form - step 2</title>
+    <link rel="stylesheet" href="./styles/SignUp.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="logo"></div>
+        <nav>navigation</nav>
+    </header>
+    <main>
+        <section>
+            <h1>Sign up to yourcustomtailor.com</h1>
+            <hr>
+        </section>
+        <section>
+            <h2>Step 2/4 - how can we reach you?</h2>
+            <div class="progress-container">
+                <progress value="2" max="4"></progress>
+            </div>
+            <p>we will probably need to stay in touch somehow. Let us now how we can reach you?</p>
+            <form method="post" action="step3.html" autocomplete="off">
+                <div class="inputs">
+                    <div class="input-group">
+                        <label>email*</label>
+                    </div>
+                    <div class="input-group">
+                        <input name='email' type='email' class="form-input" required />
+                    </div>
+                    <div class="input-group">
+                        <label>phone*</label>
+                    </div>
+                    <div class="input-group">
+                        <input name='phone' type="tel" pattern="[0-9]{8}" inputmode="tel" title="inter a valid danish phone number" class="form-input" required />
+                    </div>
+                    <div class="input-group">
+                        <label>password*</label>
+                    </div>
+                    <div class="input-group">
+                        <input name='password' type='password' pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 10 or more characters" class="form-input" required />
+                    </div>
+                    <div class="input-group"></div>
+                    <div class="input-group"></div>
+                    <div class="input-group">
+                        <label>re-enter password*</label>
+                    </div>
+                    <div class="input-group">
+                        <input name='password_rep' type='password' pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 10 or more characters" class="form-input" required />
+                    </div>
+                    <p class="p-page2">I want to sign up for newsletter : </p>
+                    <div class="radiobtn">
+                        <div>
+                            <label>weekly news <input type="radio" name="newsletter" value="weekly-news" checked></label>
+                        </div>
+                        <div>
+                            <label>monthly news <input type="radio" name="newsletter" value="monthly-news"></label>
+                        </div>
+                        <div>
+                            <label>don't send me news <input type="radio" name="newsletter" value="no-news"></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-division">
+                    <button type="submit">Next Step</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
