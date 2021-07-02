@@ -1,4 +1,4 @@
-let dogYearOfBirth = 2015;
+const dogYearOfBirth = 2015;
 let dogYearFuture = 2045;
 let dogYear = (dogYearFuture - dogYearOfBirth) * 7;
 let inHumanYear = dogYearFuture - dogYearOfBirth;
