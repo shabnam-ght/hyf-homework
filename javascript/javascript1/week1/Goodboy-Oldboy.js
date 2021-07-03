@@ -1,8 +1,8 @@
 const dogYearOfBirth = 2015;
-let dogYearFuture = 2045;
-let dogYear = (dogYearFuture - dogYearOfBirth) * 7;
-let inHumanYear = dogYearFuture - dogYearOfBirth;
-let shouldShowResultInDogYears = true;
+const dogYearFuture = 2045;
+const dogYear = (dogYearFuture - dogYearOfBirth) * 7;
+const inHumanYear = dogYearFuture - dogYearOfBirth;
+const shouldShowResultInDogYears = true;
 if (shouldShowResultInDogYears) {
     console.log("Your dog will be " + dogYear + " dog years old in " + dogYearFuture)
 } else {
