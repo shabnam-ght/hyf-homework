@@ -34,16 +34,16 @@
     function getNumberOfStudents() {
         return class07Students.length;
     }
-    console.log(addStudentToClass('student1'));
-    console.log(addStudentToClass('student2'));
-    console.log(addStudentToClass('student3'));
-    console.log(addStudentToClass('student2'));
-    console.log(addStudentToClass('Queen in Denmark'));
-    console.log(addStudentToClass('student4'));
-    console.log(addStudentToClass('student5'));
-    console.log(addStudentToClass('student6'));
-    console.log(addStudentToClass('student7'));
-    console.log(addStudentToClass('Queen in Denmark'));
-    console.log(addStudentToClass('student9'));
-    console.log('there is '+getNumberOfStudents()+ ' students in the class.');
-    console.log(class07Students);
+    console.log(trim(addStudentToClass('student1')));
+    console.log(trim(addStudentToClass('student2')));
+    console.logtrim((addStudentToClass('student3')));
+    console.log(trim(addStudentToClass('student2')));
+    console.log(trim(addStudentToClass('Queen in Denmark')));
+    console.log(trim(addStudentToClass('student4')));
+    console.log(trim(addStudentToClass('student5')));
+    console.log(trim(addStudentToClass('student6')));
+    console.log(trim(addStudentToClass('student7')));
+    console.log(trim(addStudentToClass('Queen in Denmark')));
+    console.log(trim(addStudentToClass('student9')));
+    console.log(trim('there is '+getNumberOfStudents()+ ' students in the class.'));
+    console.log(trim(class07Students));
