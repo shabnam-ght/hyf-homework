@@ -21,11 +21,7 @@ function canBuyMoreCandy(){
     for(let i=0;i<boughtCandyPrices.length;i++){
         price+=boughtCandyPrices[i];
     }
-    if(price<amountToSpend){
-        return true;
-    }else{
-        return false;
-    }
+    return price<amountToSpend;
 }
 addCandy('Sweet',10);
 addCandy('Chocolate',20);
