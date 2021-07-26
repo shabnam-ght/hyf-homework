@@ -1,31 +1,11 @@
 
 function getEventWeekday(day){
-    let d = new Date();
-    let f=d.getDay();
-    let res=day+f;
-    res=res%7;
-    switch (res) {
-        case 0:
-          day = "Sunday";
-          break;
-        case 1:
-          day = "Monday";
-          break;
-        case 2:
-           day = "Tuesday";
-          break;
-        case 3:
-          day = "Wednesday";
-          break;
-        case 4:
-          day = "Thursday";
-          break;
-        case 5:
-          day = "Friday";
-          break;
-        default:
-          day = "Saturday";
-      }
+  const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+  function getEventWeekday(day) {
+    const todayIndex = new Date().getDay();
+    return weekDays[(todayIndex + day) % 7];
+  }
     return day;
 }
 let day=45;
