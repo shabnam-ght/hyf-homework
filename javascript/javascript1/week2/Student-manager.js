@@ -6,13 +6,12 @@
         if(studentName===''){
             str='studentName can not be empty';
         }else{
-            let flag=0;
             for(let i=0;i<number;i++){
                 if(class07Students[i]===studentName){
-                    flag=1;
+                    str=studentName + " is added";
                 }
             }
-            if(flag===1){
+            if(class07Students.includes(studentName)){
                 str='same person cannot be added';
             }else{
                 if(studentName==='Queen in Denmark'){
@@ -34,16 +33,16 @@
     function getNumberOfStudents() {
         return class07Students.length;
     }
-    console.log(trim(addStudentToClass('student1')));
-    console.log(trim(addStudentToClass('student2')));
-    console.logtrim((addStudentToClass('student3')));
-    console.log(trim(addStudentToClass('student2')));
+    console.log(trim(addStudentToClass('shabnam')));
+    console.log(trim(addStudentToClass('ali')));
+    console.logtrim((addStudentToClass('marie')));
+    console.log(trim(addStudentToClass('ali')));
     console.log(trim(addStudentToClass('Queen in Denmark')));
-    console.log(trim(addStudentToClass('student4')));
-    console.log(trim(addStudentToClass('student5')));
-    console.log(trim(addStudentToClass('student6')));
-    console.log(trim(addStudentToClass('student7')));
+    console.log(trim(addStudentToClass('jeff')));
+    console.log(trim(addStudentToClass('jens')));
+    console.log(trim(addStudentToClass('clarck')));
+    console.log(trim(addStudentToClass('sara')));
     console.log(trim(addStudentToClass('Queen in Denmark')));
-    console.log(trim(addStudentToClass('student9')));
+    console.log(trim(addStudentToClass('mads')));
     console.log(trim('there is '+getNumberOfStudents()+ ' students in the class.'));
     console.log(trim(class07Students));
