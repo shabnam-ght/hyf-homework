@@ -1,6 +1,6 @@
 
 function whatToWear(temprature){
-    var str='';
+    let str='';
     if (temprature>25){
         str= 'wear bikini';
     }else if(temprature>18){
