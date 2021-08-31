@@ -10,7 +10,7 @@ const names = [
 ];
 const nameToRemove = "Ahmad";
 
-for( var i = 0; i < names.length; i++){
+for( let i = 0; i < names.length; i++){
 
     if ( names[i] === nameToRemove) {
 
