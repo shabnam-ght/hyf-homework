@@ -16,7 +16,7 @@ const notes = [];
         }
     }
     function logOutNotesFormatted() {
-        for( var i = 0; i < notes.length; i++){
+        for( let i = 0; i < notes.length; i++){
             let str='The note with id: '+notes[i]['id']+', has the following note text: '+notes[i]['content'];
             console.log(str);
         }
