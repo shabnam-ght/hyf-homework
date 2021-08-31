@@ -21,8 +21,8 @@ const seriesDurations = [
 const mylife=80*365*24*60;
 
 function logOutSeriesText() {
-    var allspent=0;
-    for( var i = 0; i < seriesDurations.length; i++){
+    let allspent=0;
+    for( let i = 0; i < seriesDurations.length; i++){
         let movieTime=(seriesDurations[i]['days']*24*60)+(seriesDurations[i]['hours']*60)+seriesDurations[i]['minutes'];
         allspent+=movieTime;
         let spentTime=(movieTime/mylife*100).toPrecision(2);
