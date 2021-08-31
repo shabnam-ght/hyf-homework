@@ -1,10 +1,13 @@
 const activities = [];
     const limit=200;
     function addActivity(date, activity, duration) {
-        var arr=[];
-        arr['date']=date;
-        arr['activity']=activity;
-        arr['duration']=parseInt(duration);
+        let obj={
+
+            'date':date,
+            'activity':activity,
+            'duration':parseInt(duration)
+
+        }
         activities.push(arr);
     }
 
@@ -14,7 +17,7 @@ const activities = [];
             console.log('Add some activities before calling showStatus');
         }else{
             let temp=0;
-            for( var i = 0; i < arrlength; i++){
+            for( let i = 0; i < arrlength; i++){
                 temp+=arr[i]['duration'];
             }
             let str='You have added '+arrlength+' activities. They amount to '+temp+' min. of usage';
