@@ -1,13 +1,15 @@
 const notes = [];
 
     function saveNote(content, id) {
-        var arr=[];
-        arr['content']=content;
-        arr['id']=id;
+        let obj={
+            'content':content,
+            'id':id,
+            
+        }
         notes.push(arr);
     }
     function getNote(id) {
-        for( var i = 0; i < notes.length; i++){
+        for( let i = 0; i < notes.length; i++){
             if ( notes[i]['id'] === id) {
                 return notes[i]['content'];
             }
