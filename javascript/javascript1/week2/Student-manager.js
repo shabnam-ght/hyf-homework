@@ -3,18 +3,18 @@
     function addStudentToClass(studentName) {
         let str='';
         let number=getNumberOfStudents();
-        if(studentName===''){
+        if(studentName.trim()===''){
             str='studentName can not be empty';
         }else{
             for(let i=0;i<number;i++){
-                if(class07Students[i]===studentName){
+                if(class07Students[i].trim()===studentName){
                     str=studentName + " is added";
                 }
             }
             if(class07Students.includes(studentName)){
                 str='same person cannot be added';
             }else{
-                if(studentName==='Queen in Denmark'){
+                if(studentName.trim()==='Queen in Denmark'){
                     class07Students.push('Queen in Denmark');
                     str='Queen in Denmark added succesfully';
                 }else{
@@ -33,16 +33,16 @@
     function getNumberOfStudents() {
         return class07Students.length;
     }
-    console.log(trim(addStudentToClass('shabnam')));
-    console.log(trim(addStudentToClass('ali')));
-    console.logtrim((addStudentToClass('marie')));
-    console.log(trim(addStudentToClass('ali')));
-    console.log(trim(addStudentToClass('Queen in Denmark')));
-    console.log(trim(addStudentToClass('jeff')));
-    console.log(trim(addStudentToClass('jens')));
-    console.log(trim(addStudentToClass('clarck')));
-    console.log(trim(addStudentToClass('sara')));
-    console.log(trim(addStudentToClass('Queen in Denmark')));
-    console.log(trim(addStudentToClass('mads')));
-    console.log(trim('there is '+getNumberOfStudents()+ ' students in the class.'));
-    console.log(trim(class07Students));
+    console.log(addStudentToClass('shabnam'));
+    console.log(addStudentToClass('ali'));
+    console.log(addStudentToClass('marie'));
+    console.log(addStudentToClass('ali'));
+    console.log(addStudentToClass('Queen in Denmark'));
+    console.log(addStudentToClass('jeff'));
+    console.log(addStudentToClass('jens'));
+    console.log(addStudentToClass('clarck'));
+    console.log(addStudentToClass('sara'));
+    console.log(addStudentToClass('Queen in Denmark'));
+    console.log(addStudentToClass('mads'));
+    console.log('there is '+getNumberOfStudents()+ ' students in the class.');
+    console.log(class07Students);
