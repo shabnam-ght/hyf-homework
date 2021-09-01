@@ -9,4 +9,4 @@ function getEventWeekday(day){
     return day;
 }
 let day=45;
-console.log(getEventWeekday(day));
+console.log(getEventWeekday(day)); 

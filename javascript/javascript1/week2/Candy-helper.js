@@ -15,7 +15,7 @@ function addCandy(candyType,weight){
     }
     boughtCandy.push([candyType,weight]);
     boughtCandyPrices.push(price*weight);
-}
+} 
 function canBuyMoreCandy(){
     let price=0;
     for(let i=0;i<boughtCandyPrices.length;i++){
