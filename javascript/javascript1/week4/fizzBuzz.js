@@ -16,3 +16,4 @@ function fizzBuzzArray(fizzNumber, buzzNumber) {
 }
 const arrayResult = fizzBuzzArray(3, 5);
 console.log(arrayResult);
+ 

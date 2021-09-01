@@ -18,7 +18,7 @@ function getReply(command){
     }else if(command.includes("what is my name")){
         if(userName===''){
             response ="we have not met before!";
-        }else{
+        }else{ 
             response ='you are '+userName;
         }
     }else if (command.startsWith("add ") && command.endsWith(" to my todo")){
