@@ -10,4 +10,4 @@ function getFullname(firstname, surname,useFormalName){
 let fullname1 ="shabnam";
 let fullname2="ghatei";
 let bool=true;
-console.log(getFullname(fullname1 ,fullname2 ,bool));
+console.log(getFullname(fullname1 ,fullname2 ,bool)); 
