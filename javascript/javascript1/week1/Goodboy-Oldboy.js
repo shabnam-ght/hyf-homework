@@ -7,4 +7,4 @@ if (shouldShowResultInDogYears) {
     console.log("Your dog will be " + dogYear + " dog years old in " + dogYearFuture)
 } else {
     console.log("Your dog will be " + inHumanYear + " human years old in " + dogYearFuture)
-}
+} 

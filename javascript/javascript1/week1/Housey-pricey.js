@@ -12,7 +12,7 @@ if (housePricePeter > peter.houseCost) {
 } else if (housePricePeter === peter.houseCost) {
     console.log("peter has payed the house value")
 }
-else {
+else { 
     console.log("peter has payed more money that house value")
 }
 const julia = {

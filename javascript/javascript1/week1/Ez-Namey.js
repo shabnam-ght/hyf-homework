@@ -5,4 +5,4 @@ const secondWords = ["corprate", "institute", "company", "shop", "market", "appl
 const randomNumber = Math.floor(Math.random() * 10);
 const randomNumber2 = Math.floor(Math.random() * 10);
 const startupName = firstWords[randomNumber] + " " + secondWords[randomNumber2];
-console.log(startupName);
+console.log(startupName); 
