@@ -16,3 +16,4 @@ function whatToWear(temprature){
 }
 const clothesToWear=whatToWear(10);
 console.log(clothesToWear);
+ 

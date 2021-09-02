@@ -10,7 +10,7 @@
                 if(class07Students[i].trim()===studentName){
                     str=studentName + " is added";
                 }
-            }
+            } 
             if(class07Students.includes(studentName)){
                 str='same person cannot be added';
             }else{
