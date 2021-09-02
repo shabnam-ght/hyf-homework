@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    const travelInformation = {
+        speed: 50,
+        destinationDistance: 432,
+    };
+
+    function calculateTime(arr){
+        let time=arr['destinationDistance']/arr['speed'];
+        let hour=parseInt(time);
+        let minute=parseInt((time%1)*60,0);
+        return hour+' hours and '+minute+' minutes';
+    }
+
+    const travelTime = calculateTime(travelInformation);
+    console.log(travelTime); // 8 hours and 38 minutes
+</script>
+</body>
+</html>
