@@ -10,9 +10,9 @@ function renderProducts(products) {
     let price = document.createElement("span");
     let rating = document.createElement("span");
 
-    title.innerHTML = products[i].name;
-    price.innerHTML = "Price: " + products[i].price;
-    rating.innerHTML = "Rating: " + products[i].rating;
+    title.innerHTML = products[i].name + '<br/>';
+    price.innerHTML = "Price: " + products[i].price  + '<br/>';
+    rating.innerHTML = "Rating: " + products[i].rating  + '<br/><br>';
 
     productList.appendChild(title);
     title.appendChild(price);

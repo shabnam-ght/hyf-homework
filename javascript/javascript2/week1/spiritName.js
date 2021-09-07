@@ -1,5 +1,3 @@
-
-
 const inputName= document.getElementById("getName");
 const result=document.getElementById("result");
 const spiritName=["axar", "drogo", "mooroopna" ,"achak", "ahriman"," alastor"]
