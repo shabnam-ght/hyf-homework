@@ -1,69 +1,37 @@
-const input = document.getElementById("city")
-const button = document.querySelector("button")
-const weatherResult = document.querySelector(".weather-container")
-
-function getCityWeather() {
-    button.addEventListener("click", function () {
-        const inputVal = input.value
-        let url = `http://api.openweathermap.org/data/2.5/weather?q=${inputVal}&units=metric&apikey=03706c7848332020321083d064b8a14f`
-        if (!input.value) {
-            alert("You should write a city name")
-            return;
-        }
-
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-
-                const name = document.querySelector("h2")
-                name.innerHTML = data.name
-                weatherResult.appendChild(name)
-
-                const icon = "http://api.openweathermap.org/img/w/" + data.weather[0].icon + ".png";
-                const imgIcon = document.querySelector(".img")
-                imgIcon.src = icon
-                weatherResult.appendChild(imgIcon)
-
-                const temp = document.querySelector(".temp")
-                temp.innerHTML = Math.floor(data.main.temp) + "°";
-                weatherResult.appendChild(temp)
-
-                const weather = document.querySelector(".weather")
-                weather.innerHTML = data.weather[0].main
-                weatherResult.appendChild(weather)
-
-
-
-                const windSpeed = document.querySelector(".wind")
-                windSpeed.innerHTML = "Wind speed: " + data.wind.speed
-                weatherResult.appendChild(windSpeed)
-
-                const cloudy = document.querySelector(".cloudy")
-                cloudy.innerHTML = "Cloudy: " + data.weather[0].description
-                weatherResult.appendChild(cloudy)
-
-                const sunrise = document.getElementById("sunrise")
-                const sunrise1 = new Date(data.sys.sunrise * 1000);
-                const timeChange = sunrise1.toLocaleTimeString([], {
-                    hour: "2-digit",
-                    minute: "2-digit"
-                });
-                sunrise.innerHTML = "Sunrise: " + timeChange
-                weatherResult.appendChild(sunrise)
-
-                const sunset = document.querySelector(".sunset")
-                const sunset1 = new Date(data.sys.sunset * 1000);
-                const timeChange2 = sunset1.toLocaleTimeString([], {
-                    hour: "2-digit",
-                    minute: "2-digit"
-                });
-                sunset.innerHTML = "Sunset: " + timeChange2
-                weatherResult.appendChild(sunset)
-            })
-
-    })
-
-}
-
-getCityWeather(input.value)
+const input = document.querySelector(".city");
+const button = document.querySelector("button");
+const weatherResult = document.querySelector(".weather-container");
+button.addEventListener("click", function () {
+    const inputVal = input.value;
+    const apiKey = '03706c7848332020321083d064b8a14f';
+    let url = 'http://api.openweathermap.org/data/2.5/weather?q='+inputVal+'&units=metric&apikey='+apiKey;
+    if (!input.value) {
+        alert("You should write a city name");
+        return;
+    }
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            let str='';
+            str+='<h2>'+data.name+'</h2>';
+            const icon = "http://api.openweathermap.org/img/w/" + data.weather[0].icon + ".png";
+            str+='<img class="img" src="'+icon+'">';
+            str+='<p class="temp">'+Math.floor(data.main.temp) + "°"+'</p>';
+            str+='<p class="weather">'+data.weather[0].main+'</p>';
+            str+='<p class="wind">Wind speed: '+data.wind.speed+'</p>';
+            str+='<p class="cloudy">Cloudy: '+data.weather[0].description+'</p>';
+            const sunrise1 = new Date(data.sys.sunrise * 1000);
+            const timeChange = sunrise1.toLocaleTimeString([], {
+                hour: "2-digit",
+                minute: "2-digit"
+            });
+            str+='<p id="sunrise">Sunrise: '+timeChange+'</p>';
+            const sunset1 = new Date(data.sys.sunset * 1000);
+            const timeChange2 = sunset1.toLocaleTimeString([], {
+                hour: "2-digit",
+                minute: "2-digit"
+            });
+            str+='<p class="sunset">Sunset: '+timeChange2+'</p>';
+            weatherResult.innerHTML=str;
+        });
+});
