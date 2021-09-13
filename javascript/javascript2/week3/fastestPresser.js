@@ -6,7 +6,7 @@ let pressS=0;
     btn.addEventListener("click",()=>{
         miliSec=document.getElementById('seconds').value*1000;
         let body=document.querySelector('html');
-        body.addEventListener("keydown",letterCounter);
+        body.addEventListener("keyup",letterCounter);
 
         function letterCounter(event){
             if(event.keyCode===76){
@@ -28,6 +28,6 @@ let pressS=0;
             pressS=0;
             document.getElementById('pressL').innerHTML=0;
             document.getElementById('pressS').innerHTML=0;
-            body.removeEventListener("keydown", letterCounter);
+            body.removeEventListener("keyup", letterCounter);
         },miliSec);
     });

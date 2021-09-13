@@ -10,7 +10,7 @@ function callString() {
   stringToLog(3, "im here");
 //3
   const btn=document.getElementById("btn");
-  document.addEventListener("click", ()=>{
+  btn.addEventListener("click", ()=>{
       stringToLog(5, "this string logged after 5 sec")
   });
   //4
