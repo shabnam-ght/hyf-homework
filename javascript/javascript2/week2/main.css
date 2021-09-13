@@ -1,0 +1,37 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: rgb(134, 0, 128);
+  background-image: url("photo.jpg");
+  padding-left: 30px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2 {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#main {
+  color: rgb(97, 99, 98);
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-large;
+  border: 2px solid blue;
+  z-index: 5;
+}
+
+#list {
+  color: navy;
+  margin-top: 100px;
+  z-index: 1;
+}
