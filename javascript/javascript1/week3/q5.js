@@ -27,7 +27,7 @@ const activities = [];
             }
         }
     }
-
+ 
 
     addActivity("23/7-18", "google", 60);
     addActivity("23/7-18", "stackOverFlow", 45);

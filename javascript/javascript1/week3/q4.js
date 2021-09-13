@@ -20,7 +20,7 @@ const notes = [];
             let str='The note with id: '+notes[i]['id']+', has the following note text: '+notes[i]['content'];
             console.log(str);
         }
-    }
+    } 
 
 
     saveNote("Pick up groceries", 1);

@@ -11,4 +11,4 @@ function calculateTime(arr){
 }
 
 const travelTime = calculateTime(travelInformation);
-console.log(travelTime);
+console.log(travelTime); 

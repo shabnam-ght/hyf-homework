@@ -21,16 +21,16 @@ const seriesDurations = [
 const mylife=80*365*24*60;
 
 function logOutSeriesText() {
-    let allspent=0;
-    for( let i = 0; i < seriesDurations.length; i++){
-        let movieTime=(seriesDurations[i]['days']*24*60)+(seriesDurations[i]['hours']*60)+seriesDurations[i]['minutes'];
+    let allspent=0; 
+    for( const i = 0; i < seriesDurations.length; i++){
+        const movieTime=(seriesDurations[i]['days']*24*60)+(seriesDurations[i]['hours']*60)+seriesDurations[i]['minutes'];
         allspent+=movieTime;
-        let spentTime=(movieTime/mylife*100).toPrecision(2);
-        let str=seriesDurations[i]['title']+'took '+spentTime+'% of my life';
+        const spentTime=(movieTime/mylife*100).toPrecision(2);
+        const str=seriesDurations[i]['title']+'took '+spentTime+'% of my life';
         console.log(str);
     }
-    let spentTime=(allspent/mylife*100).toPrecision(2);
-    let str='In total that is '+spentTime+'% of my life';
+    const spentTime=(allspent/mylife*100).toPrecision(2);
+    const str='In total that is '+spentTime+'% of my life';
     console.log(str);
 }
 
