@@ -1,6 +1,6 @@
 async function myPromise(resolveAfter){
     try{
-        const promise=await new Promise(resolve=>{setTimeout(resolve,resolveAfter)});
+        const promise=await new Promise(resolve=>{setTimeout(resolve,resolveAfter)},reject);
         return promise;
     }catch(execption){
         return execption;

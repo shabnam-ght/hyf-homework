@@ -1,7 +1,7 @@
 const myPromise= new Promise(function(resolve){setTimeout(()=>{
        fetch('https://yesno.wtf/api')
        .then(response=>response.json())
-       .then(data=>{resolve(data);})},3000)});
+       .then(data=>{resolve(data);})},3000)},reject);
 myPromise.then((data) => {console.log(data);});
 
 
