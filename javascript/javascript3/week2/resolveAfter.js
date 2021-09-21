@@ -4,7 +4,7 @@ async function myPromise(resolveAfter){
         return promise;
     }catch(execption){
         return execption;
-    }
+    } 
 }
  
 myPromise(5000).then(() => {console.log("I am called asynchronously");});

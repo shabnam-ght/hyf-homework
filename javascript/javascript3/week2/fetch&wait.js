@@ -3,7 +3,7 @@ const myPromise= new Promise(function(resolve){setTimeout(()=>{
        .then(response=>response.json())
        .then(data=>{resolve(data);})},3000)},reject);
 myPromise.then((data) => {console.log(data);});
-
+ 
 
 
 function yesNoAsync(){

@@ -2,7 +2,7 @@
  
 
   ///////////////////////////////////////////////////////////
-
+ 
 function getCurrentLocation(){
     try{
         return new Promise(function(resolve,reject){
