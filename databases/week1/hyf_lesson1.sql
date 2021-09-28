@@ -1,10 +1,10 @@
 SELECT COUNT(title) FROM task;
 SELECT*FROM task WHERE due_date IS NULL;
-SELECT task.id, task.title, status.name  FROM task, status WHERE status.name LIKE "%Done%";
-SELECT task.id, task.title, status.name FROM task , status WHERE status.name NOT LIKE "%Done%";
-SELECT task.id, task.title, task.created FROM task ORDER BY created DESC;
+SELECT *FROM task WHERE status_id IN (SELECT id FROM status WHERE name = "Done");
+ WHERE status_id IN (SELECT id FROM status WHERE name != "Done");
+ SELECT task.id, task.title, task.created FROM task ORDER BY created DESC;
 SELECT task.id, task.title, task.created FROM task ORDER BY created DESC LIMIT 1;
-SELECT task.title,task.due_date,task.description from task WHERE task.title LIKE "%database%" OR task.description LIKE "%database%";
-SELECT task.title , status.name FROM task,status WHERE task.status_id=status_id;
+SELECT task.title,task.due_date from task WHERE task.title LIKE "%database%" OR task.description LIKE "%database%";
+SELECT task.title, s.name as status_id FROM task JOIN status s on s.id = task.status_id;
 select  status.name, count(status.name) FROM task, status WHERE task.status_id = status.id GROUP BY status.name;
 select  status.name, count(status.name) FROM task, status WHERE task.status_id = status.id GROUP BY status.name ORDER BY COUNT(status.name) DESC;
