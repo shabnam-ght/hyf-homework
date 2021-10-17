@@ -1,6 +1,6 @@
 SET NAMES utf8mb4;
-CREATE DATABASE meal_website;
-USE meal_website;
+CREATE DATABASE mealSharing;
+USE mealSharing;
 
 CREATE TABLE Reservation(
  id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -47,7 +47,7 @@ INSERT INTO Meal (`title`, `description`,`location`, `when`,`max_reservations`, 
 VALUES ( 'Mushroom soup' , 'milk, oats, mushroom, corn', 'Kolding','2021-02-07 15:00:00', 6 , 120, '2021-01-28');
 
 -- Get a meal with any id, fx 1
-SELECT * FROM meal
+SELECT * FROM Meal
 WHERE id =1;
 
 -- Update a meal with any id, fx 1. Update any attribute fx the title or multiple attributes
@@ -66,18 +66,18 @@ WHERE id=1;
 
 -- #2 Reservation querries
 -- Get all reservations
-SELECT * FROM reservation;
+SELECT * FROM Reservation;
 
 -- Add a new reservation
-INSERT INTO reservation (`number_of_guests`, `meal_id`,`created_date`, `contact_phonenumber`,`contact_name`, `contact_email`) 
+INSERT INTO Reservation (`number_of_guests`, `meal_id`,`created_date`, `contact_phonenumber`,`contact_name`, `contact_email`) 
 VALUES ( 4 , 2 ,'2021-01-28',  null ,'Nina', Null );
-INSERT INTO reservation (`number_of_guests`, `meal_id`,`created_date`, `contact_phonenumber`,`contact_name`, `contact_email`) 
+INSERT INTO Reservation (`number_of_guests`, `meal_id`,`created_date`, `contact_phonenumber`,`contact_name`, `contact_email`) 
 VALUES ( 10 , 3,'2021-01-28',  004512345678 ,'Mons', 'Mons@gmail.com' );
-INSERT INTO reservation (`number_of_guests`, `meal_id`,`created_date`, `contact_phonenumber`,`contact_name`, `contact_email`) 
+INSERT INTO Reservation (`number_of_guests`, `meal_id`,`created_date`, `contact_phonenumber`,`contact_name`, `contact_email`) 
 VALUES ( 5 , 3,'2021-01-28',  00457654321 ,'Charlotte', 'Charlotte@gmail.com' );
 
 -- Get a reservation with any id, fx 1
-SELECT * FROM reservation
+SELECT * FROM Reservation
 WHERE id=5;
 
 -- Update a reservation with any id, fx 1. Update any attribute fx the title or multiple attributes
@@ -86,32 +86,32 @@ SET contact_email = 'Nina@gmail.com'
 WHERE id=1;
 
 -- Delete a reservation with any id, fx 1
-DELETE FROM reservation
+DELETE FROM Reservation
 WHERE id=6;
 
 -- #3 Review querries
 -- Get all reviews
-SELECT * FROM review;
+SELECT * FROM Review;
 
 -- Add a new review
-INSERT INTO review(`title`, `description`,`meal_id`, `stars`,`created_date`) 
+INSERT INTO Review(`title`, `description`,`meal_id`, `stars`,`created_date`) 
 VALUES ('Good' ,'It was good starter but not a meal to be full with',  2 ,3, Null );
-INSERT INTO review(`title`, `description`,`meal_id`, `stars`,`created_date`)
+INSERT INTO Review(`title`, `description`,`meal_id`, `stars`,`created_date`)
 VALUES ( 'Perfect' ,'I LOVED it',  2 ,5, '2021-01-27' );
-INSERT INTO review (`title`, `description`,`meal_id`, `stars`,`created_date`)
+INSERT INTO Review (`title`, `description`,`meal_id`, `stars`,`created_date`)
 VALUES ( 'Perfect' ,'Such a great vegeterian dish! just WOW',  3 ,5, '2021-01-28' );
 
 -- Get a review with any id, fx 1
-SELECT * FROM review 
+SELECT * FROM Review 
 WHERE stars = 3;
 
 -- Update a review with any id, fx 1. Update any attribute fx the title or multiple attributes
-UPDATE review
+UPDATE Review
 SET created_date= '2021-01-24'
 WHERE id=3;
 
 -- Delete a review with any id, fx 1
-DELETE FROM review 
+DELETE FROM Review 
 WHERE id=1;
 
 
@@ -128,55 +128,58 @@ INSERT INTO Meal (`title`, `description`,`location`, `when`,`max_reservations`, 
 VALUES ( 'Lasagnia' , 'soya, cabbages, special sauce, corn', 'Alborg','2021-02-03 13:15:00', 5 , 135, '2021-01-28');
 
 -- Adding to Reservation
-INSERT INTO reservation (`number_of_guests`, `meal_id`,`created_date`, `contact_phonenumber`,`contact_name`, `contact_email`) 
+INSERT INTO Reservation (`number_of_guests`, `meal_id`,`created_date`, `contact_phonenumber`,`contact_name`, `contact_email`) 
 VALUES ( 1 , 5 ,'2021-01-28',  null ,'Christine', Null );
-INSERT INTO reservation (`number_of_guests`, `meal_id`,`created_date`, `contact_phonenumber`,`contact_name`, `contact_email`) 
+INSERT INTO Reservation (`number_of_guests`, `meal_id`,`created_date`, `contact_phonenumber`,`contact_name`, `contact_email`) 
 VALUES ( 3 , 4,'2021-01-29',  004511223344 ,'Lise', 'Lise@gmail.com' );
-INSERT INTO reservation (`number_of_guests`, `meal_id`,`created_date`, `contact_phonenumber`,`contact_name`, `contact_email`) 
+INSERT INTO Reservation (`number_of_guests`, `meal_id`,`created_date`, `contact_phonenumber`,`contact_name`, `contact_email`) 
 VALUES ( 2 , 3,'2021-01-31',  004599887766 ,'Yanal', 'Yanal@gmail.com' );
 
 -- Adding to review
-INSERT INTO review(`title`, `description`,`meal_id`, `stars`,`created_date`) 
+INSERT INTO Review(`title`, `description`,`meal_id`, `stars`,`created_date`) 
 VALUES ('Not Good' ,'It was salty',  5 ,2, Null );
-INSERT INTO review(`title`, `description`,`meal_id`, `stars`,`created_date`)
+INSERT INTO Review(`title`, `description`,`meal_id`, `stars`,`created_date`)
 VALUES ( 'Good' ,NULL ,  7 ,5, '2021-01-23' );
-INSERT INTO review (`title`, `description`,`meal_id`, `stars`,`created_date`)
+INSERT INTO Review (`title`, `description`,`meal_id`, `stars`,`created_date`)
 VALUES ( 'Very good' ,'very tasty ',  4 ,5, '2021-02-12' );
 
 -- Get meals that has a price smaller than a specific price fx 90
-SELECT * FROM meal
+SELECT * FROM Meal
 WHERE price< 90;
 
 -- Get meals that still has available reservations
-SELECT * FROM meal
-WHERE max_reservations > (SELECT SUM(number_of_guests)
-        FROM reservation
-        WHERE meal_id = meal.id);
+SELECT * FROM Meal
+WHERE max_Reservations > (SELECT SUM(number_of_guests)
+        FROM Reservation
+        WHERE Meal_id = Meal.id);
             
 -- Get meals that partially match a title. Rød grød med will match the meal with the title Rød grød med fløde
-SELECT * FROM meal
+SELECT * FROM Meal
 WHERE title LIKE '%Rød grød med%';
 
 -- Get meals that has been created between two dates
-SELECT * FROM meal
+SELECT * FROM Meal
 WHERE created_date 
 BETWEEN  '2021-01-25' AND '2021-02-16';
 
 -- Get only specific number of meals fx return only 5 meals
-SELECT * FROM meal
+SELECT * FROM Meal
 LIMIT 3;
 
 -- Get the meals that have good reviews
-SELECT meal.* FROM meal
-JOIN review ON meal.id= review.meal_id AND review.title='Good';
+SELECT  Meal.id, Meal.title, Review.title, Review.stars FROM Meal, Review
+where Review.stars>4  AND Meal.id=Review.Meal_id;
 
 -- Get reservations for a specific meal sorted by created_date
-SELECT * FROM reservation
-WHERE meal_id =3 
-ORDER BY created_date;
+SELECT Meal.title, Reservation.Meal_id, SUM(Reservation.Number_of_guests), Reservation.Created_date AS Res_created_date
+FROM Reservation
+   JOIN Meal ON (Meal.id=Reservation.Meal_id)
+GROUP BY Reservation.created_date,Meal.title
+ORDER BY Reservation.created_date;
+
 
 -- Sort all meals by average number of stars in the reviews
-SELECT meal.* FROM meal
-JOIN review ON meal.id= review.meal_id
-GROUP BY review.meal_id
-ORDER BY AVG(review.stars);
+SELECT Meal.* FROM Meal
+JOIN Review ON Meal.id= Review.Meal_id
+GROUP BY Review.Meal_id
+ORDER BY AVG(Review.stars);
