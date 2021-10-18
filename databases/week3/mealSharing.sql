@@ -173,9 +173,10 @@ where Review.stars>4  AND Meal.id=Review.Meal_id;
 -- Get reservations for a specific meal sorted by created_date
 SELECT Meal.title, Reservation.Meal_id, SUM(Reservation.Number_of_guests), Reservation.Created_date AS Res_created_date
 FROM Reservation
-   JOIN Meal ON (Meal.id=Reservation.Meal_id)
-GROUP BY Reservation.created_date,Meal.title
+   JOIN Meal ON (Meal.id=Reservation.Meal_id) where 1
+GROUP BY Meal.title
 ORDER BY Reservation.created_date;
+
 
 
 -- Sort all meals by average number of stars in the reviews
