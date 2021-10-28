@@ -14,6 +14,6 @@ WHERE user.name = 'Maryrose Meadows' AND month(created)=(09);
 
 SELECT MONTH(created) AS month_number , count(*) AS total FROM task 
 GROUP BY month(created);
-
+ 
 
 
