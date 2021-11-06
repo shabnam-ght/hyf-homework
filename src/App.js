@@ -1,24 +1,13 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import List from './List';
 import './App.css';
-
+const data=["Get out of bed, Wed Sep 13 2017","Brush teeth, Thu Sep 14 2017","Eat breakfast, Fri Sep 15 2017"];
 function App() {
+  const [list, setList] = useState(data);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   
+   <List list={list}></List>
+  
   );
 }
 
