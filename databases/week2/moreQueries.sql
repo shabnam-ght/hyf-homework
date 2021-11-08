@@ -1,4 +1,3 @@
-
 --More queries
 SELECT task.id,user.id AS UI,task.title,user.email ,user.name from task
 JOIN user ON task.user_id=user.id
