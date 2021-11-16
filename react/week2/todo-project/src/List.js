@@ -1,5 +1,5 @@
 import ListItem from "./ListItem";
-function List({list}){
+function List({list,deleteListItem}){
 
     return(
         <div>
@@ -7,7 +7,7 @@ function List({list}){
                 {list.map((item)=>{
                     return(
                         <li>
-                            <ListItem listItem={item}/>
+                            <ListItem listItem={item} deleteListItem={deleteListItem}/>
                         </li>
                     );
                 })}
