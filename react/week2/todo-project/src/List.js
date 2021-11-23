@@ -6,9 +6,9 @@ function List({list,deleteListItem}){
             <ol>
                 {list.map((item)=>{
                     return(
-                        <li>
-                            <ListItem listItem={item} deleteListItem={deleteListItem}/>
-                        </li>
+                        
+                        <ListItem listItem={item} deleteListItem={deleteListItem}/>
+                        
                     );
                 })}
                 
