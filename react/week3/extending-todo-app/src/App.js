@@ -1,30 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import List from './List';
 import './App.css';
-  const todoList = [
-    {
-      id: 1,
-      description: "Get out of bed",
-      date:"12/1/7"
-    },
-    {
-      id: 2,
-      description: "Brush teeth",
-      date:"12/1/27"
-    },
-    {
-      id: 3,
-      description: "https://gist.githubusercontent.com/benna100/391eee7a119b50bd2c5960ab51622532/raw",
-      date:"12/21/7"
-    },
-  ];
+
 function App() {
   const [description,setDescription]=useState("");
   const [date,setDate]=useState("");
-  const [list, setList] = useState(todoList);
+  const [list, setList] = useState([]);
+
+  useEffect(() => {
+    fetch("https://gist.githubusercontent.com/benna100/391eee7a119b50bd2c5960ab51622532/raw")
+      .then(res => res.json())
+      .then(
+        (result) => {
+          setList(result);
+        },
+        (error) => {
+          console.log(error)
+        }
+      )
+  }, [])
+
+
+
   function editListItem(id,newDescription){
     const newList=[...list];
-    const objIndex = newList.findIndex((obj => obj.id == id));
+    const objIndex = newList.findIndex((obj => obj.id === id));
     newList[objIndex].description=newDescription;
     setList(newList);
   }
