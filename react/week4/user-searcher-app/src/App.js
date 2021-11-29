@@ -1,57 +1,56 @@
-import { useState , useEffect} from "react";
-const api='https://api.github.com/search/users?q=';
+import { useState, useEffect } from 'react';
+
 function App() {
   const [data, setData] = useState([]);
-  const [search, setSearch] = useState("");
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [query, setQuery] = useState('');
+
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-/*
+
   useEffect(() => {
-    fetch(`${api}${search}`)
-      .then(res => res.json())
-      .then(
-        (result) => {
-          setIsLoaded(true);
-          setData(result);
-        },
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
-        }
-      )
-  }, [])
-*/
-
-
-useEffect(() => {
-  const fetchGit = () => {
-     return fetch(`${api}${search}`, {method: "GET"}
-  )
-    .then(res => {
-      return res.json();
-    })
-    .then(result => {
-      setIsLoaded(true);
-     setData(result);
-    })
-    .catch(err => {
-      setIsLoaded(true);
-      setError(err);
-    });
-};
-fetchGit();
-}, [search]);
+    if (query !== "") {
+    const fetchData = async () => {
+      setIsLoading(true);
+      try {
+        const res = await fetch(`https://api.github.com/search/users?q=${query}`);
+        const json = await res.json();
+        setData(json.items);
+        setIsLoading(false);
+      } catch (err) {
+        setError(err);
+        setIsLoading(false);
+      }
+    };
+    fetchData();
+  }}, [query]);
 
   return (
-    <div>
+    <>
+      <h2>Github user searcher</h2>
+      <input type="text" placeholder="search for user" value={query} onChange={(event) => setQuery(event.target.value)} />
       
-        <h2>Github user searcher</h2>
-        <input type="text"></input>
-        <ul>
-          <li>{data}</li>
-        </ul>
-        <button onClick={()=>setSearch("shabnam-ght")}>test</button>
-    </div>
+      {isLoading===true && 
+      <p>is loading...!</p>
+      }
+      {data?.length>0 && 
+      <ul>
+        {data.map((item) => (
+          <li>{item.login}</li>
+        ))}
+      </ul>
+      }
+      {!data && 
+        <p>
+          No result!!!!!
+        </p>
+      
+      }
+
+      {error &&
+      
+        <p>error: {error}</p>
+      }
+    </>
   );
 }
 
