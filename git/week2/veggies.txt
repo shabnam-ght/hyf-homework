@@ -1,5 +1,7 @@
 corn
 cucumber
-eggplant
+squash
 lettuce
 leek
+ginger
+tomato
