@@ -1,5 +1,7 @@
 corn
 cucumber
-garlic
+ginger
 lettuce
 leek
+tomato
+onion
