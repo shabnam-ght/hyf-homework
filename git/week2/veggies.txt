@@ -1,0 +1,7 @@
+corn
+cucumber
+ginger
+lettuce
+leek
+tomato
+onion
