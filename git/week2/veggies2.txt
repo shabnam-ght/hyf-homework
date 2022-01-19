@@ -1,5 +1,13 @@
 potato
 tomato
+
+garlic
+meant
+eggplant
+onion
+mushroom
+
 mushroom
 meant
 eggplant
+
