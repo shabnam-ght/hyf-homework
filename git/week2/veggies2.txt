@@ -1,5 +1,7 @@
 potato
 tomato
-cucamber
+garlic
 meant
 eggplant
+onion
+mushroom
